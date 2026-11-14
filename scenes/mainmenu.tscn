@@ -31,6 +31,7 @@ script = ExtResource("1_r3g3c")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2141066292]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1693262241]
+texture_filter = 1
 offset_right = 1148.0
 offset_bottom = 644.0
 texture = ExtResource("2_r3g3c")

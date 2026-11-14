@@ -4,7 +4,7 @@ extends Control
 
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
+	get_parent().queue_free()
 
 
 func _ready() -> void:
@@ -16,3 +16,8 @@ func _on_h_slider_value_changed(value: float) -> void:
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(music_bus_index, toggled_on)
+
+
+func _on_settings_pressed():
+	var settings = preload("res://scenes/settings.tscn").instantiate()
+	add_child(settings)

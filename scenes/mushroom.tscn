@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c38xyuxhymt4v"]
+
+[ext_resource type="Script" uid="uid://d27n8d0bqx8ud" path="res://scenes/mushroom.gd" id="1_0bdi0"]
+[ext_resource type="Texture2D" uid="uid://dn10efby55pay" path="res://assets/shrooms/Shroomss1.png" id="1_b0s10"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chxeh"]
+size = Vector2(12, 5)
+
+[node name="Area2D" type="Area2D" unique_id=8374033]
+script = ExtResource("1_0bdi0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015309217]
+texture_filter = 1
+position = Vector2(0, -8)
+texture = ExtResource("1_b0s10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1830119103]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_chxeh")

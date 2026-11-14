@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 100.0
-const JUMP_VELOCITY = -200.0
+const JUMP_VELOCITY = -300.0
 
 
 func _physics_process(delta: float) -> void:
@@ -23,3 +23,20 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+var is_dead := false
+
+func die():
+	if is_dead:
+		return
+	is_dead = true
+	velocity = Vector2.ZERO
+	$AnimatedSprite2D.play("death")
+	await $AnimatedSprite2D.animation_finished
+	get_tree().reload_current_scene()
+	
+func bounce(force):
+	velocity.y = force
+	$AnimatedSprite2D.play("bigjump")
+	await $AnimatedSprite2D.animation_finished
+	$AnimatedSprite2D.play("idle")
