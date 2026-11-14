@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bf4npse0rxeqn"]
+
+[ext_resource type="Texture2D" uid="uid://chiblns1jd0kt" path="res://assets/moving platforms/NKD movig platform.png" id="1_fbroi"]
+[ext_resource type="PackedScene" uid="uid://dwu52vlbesjnu" path="res://scenes/spikes1.tscn" id="2_q7w64"]
+[ext_resource type="PackedScene" uid="uid://c38xyuxhymt4v" path="res://scenes/mushroom.tscn" id="3_q7w64"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chxeh"]
+size = Vector2(24.152306, 7.5)
+
+[sub_resource type="Animation" id="Animation_fbroi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q7w64"]
+resource_name = "reverse"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(35, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xbpmo"]
+_data = {
+&"RESET": SubResource("Animation_fbroi"),
+&"reverse": SubResource("Animation_q7w64")
+}
+
+[node name="Node2D" type="Node2D" unique_id=686912576]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1900636597]
+
+[node name="TextureRect" type="TextureRect" parent="AnimatableBody2D" unique_id=1156936010]
+texture_filter = 1
+offset_right = 23.304611
+offset_bottom = 20.0
+texture = ExtResource("1_fbroi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=804044589]
+position = Vector2(11.228455, 6.25)
+shape = SubResource("RectangleShape2D_chxeh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D" unique_id=564830480]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_xbpmo")
+autoplay = &"reverse"
+
+[node name="spikes" parent="AnimatableBody2D" unique_id=604348745 instance=ExtResource("2_q7w64")]
+position = Vector2(13, 26)
+
+[node name="Area2D" parent="AnimatableBody2D" unique_id=8374033 instance=ExtResource("3_q7w64")]
+position = Vector2(12, 3)

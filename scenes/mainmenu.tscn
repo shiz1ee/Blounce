@@ -78,6 +78,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_wgsso")
 theme_override_styles/hover = SubResource("StyleBoxFlat_igs2m")
 text = "Quit"
 
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1341922909]
+offset_left = 931.0
+offset_top = 609.0
+offset_right = 1124.0
+offset_bottom = 632.0
+theme_override_fonts/font = ExtResource("3_s5g8n")
+theme_override_font_sizes/font_size = 18
+text = "Made by:- Blob and Dean"
+
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

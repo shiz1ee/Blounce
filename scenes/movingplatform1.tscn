@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c3vktb0hsia0s"]
+
+[ext_resource type="Texture2D" uid="uid://chiblns1jd0kt" path="res://assets/moving platforms/NKD movig platform.png" id="1_a0lmd"]
+[ext_resource type="PackedScene" uid="uid://dwu52vlbesjnu" path="res://scenes/spikes1.tscn" id="2_4t31h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chxeh"]
+size = Vector2(24.152306, 7.5)
+
+[sub_resource type="Animation" id="Animation_k55no"]
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0qx0v"]
+resource_name = "move"
+length = 3.0333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 3.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(80, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ygoro"]
+_data = {
+&"RESET": SubResource("Animation_k55no"),
+&"move": SubResource("Animation_0qx0v")
+}
+
+[node name="Node2D" type="Node2D" unique_id=686912576]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1900636597]
+position = Vector2(80, 0)
+
+[node name="TextureRect" type="TextureRect" parent="AnimatableBody2D" unique_id=1156936010]
+texture_filter = 1
+offset_right = 23.304611
+offset_bottom = 20.0
+texture = ExtResource("1_a0lmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=804044589]
+position = Vector2(11.228455, 6.25)
+shape = SubResource("RectangleShape2D_chxeh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D" unique_id=536794448]
+libraries/ = SubResource("AnimationLibrary_ygoro")
+autoplay = &"move"
+
+[node name="spikes" parent="AnimatableBody2D" unique_id=604348745 instance=ExtResource("2_4t31h")]
+position = Vector2(13, 26)

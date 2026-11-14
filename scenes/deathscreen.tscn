@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://clvrbx85fvvr2"]
+
+[ext_resource type="Script" uid="uid://cv1qe5l74y53j" path="res://scripts/deathscreen.gd" id="1_eye5d"]
+[ext_resource type="Shader" uid="uid://b6yuf7ma03s22" path="res://settings.gdshader" id="2_hgqth"]
+[ext_resource type="FontFile" uid="uid://h7jvncpts8p8" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="3_ke8wd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t1dl8"]
+shader = ExtResource("2_hgqth")
+shader_parameter/blur_amount = 2.0
+
+[node name="CanvasLayer" type="Control" unique_id=1270478084]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eye5d")
+
+[node name="blur" type="ColorRect" parent="." unique_id=1149588047]
+material = SubResource("ShaderMaterial_t1dl8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -9.0
+offset_right = 1194.0
+offset_bottom = 662.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1402364688]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -20.0
+offset_right = 47.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Retry" type="Button" parent="VBoxContainer" unique_id=576427411]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_ke8wd")
+text = "Retry"
+
+[node name="Main menu" type="Button" parent="VBoxContainer" unique_id=1923086501]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_ke8wd")
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main menu" to="." method="_on_main_menu_pressed"]

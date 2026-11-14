@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dt4cyr2nx56py"]
+
+[ext_resource type="Texture2D" uid="uid://cfcgjuo64ynvc" path="res://assets/cut scene/cut scene1.png" id="1_27hq1"]
+[ext_resource type="Script" uid="uid://ckwkde0lvlhxj" path="res://scenes/outro.gd" id="1_p8q65"]
+[ext_resource type="Texture2D" uid="uid://djlaf60oufgy4" path="res://assets/cut scene/cut scene2.png" id="2_p8q65"]
+[ext_resource type="Texture2D" uid="uid://bn2cgnif6obki" path="res://assets/cut scene/cut scene3.png" id="3_eq15a"]
+[ext_resource type="Texture2D" uid="uid://dsa70ayjj14pq" path="res://assets/cut scene/cut scene4.png" id="4_lsp6n"]
+[ext_resource type="Texture2D" uid="uid://b57sfoa0uwish" path="res://assets/cut scene/cut scene5.png" id="5_ssjpb"]
+[ext_resource type="Texture2D" uid="uid://ds7k3gjdb13ms" path="res://assets/cut scene/cut scene6.png" id="6_h6h3x"]
+[ext_resource type="Texture2D" uid="uid://bkuqcjamllt1s" path="res://assets/cut scene/cut scene7.png" id="7_t6w51"]
+[ext_resource type="Texture2D" uid="uid://c1tdw0xc23mwd" path="res://assets/cut scene/cut scene8.png" id="8_fxxuk"]
+[ext_resource type="Texture2D" uid="uid://7vb7txa1riq1" path="res://assets/cut scene/cut scene9.png" id="9_bfmx2"]
+[ext_resource type="Texture2D" uid="uid://btjk6a7bdbbuk" path="res://assets/cut scene/cut scene10.png" id="10_cn6xa"]
+[ext_resource type="Texture2D" uid="uid://cf8q553aimm5q" path="res://assets/cut scene/cut scene11.png" id="11_atr8u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o7lo8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_27hq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p8q65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eq15a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lsp6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ssjpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h6h3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_t6w51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fxxuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bfmx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cn6xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_atr8u")
+}],
+"loop": 0,
+"name": &"outro",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=151575181]
+script = ExtResource("1_p8q65")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=16475954]
+texture_filter = 1
+position = Vector2(576, 324)
+scale = Vector2(4.0277777, 3.9629629)
+sprite_frames = SubResource("SpriteFrames_o7lo8")
+animation = &"outro"
+autoplay = "outro"
+frame = 10
+frame_progress = 1.0
