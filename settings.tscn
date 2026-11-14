@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cnq6kcsay6x8v"]
+
+[node name="Control" type="Control" unique_id=1143955069]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1682155563]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=718807676]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -96.5
+offset_right = 149.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
