@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://de5u2t54dhs43"]
+
+[ext_resource type="AudioStream" uid="uid://ex2kiucuxlw2" path="res://assets/music/pixelloop.mp3" id="1_dd3px"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1861493526]
+stream = ExtResource("1_dd3px")
+volume_db = 17.643
+autoplay = true
+bus = &"music"
+parameters/looping = true

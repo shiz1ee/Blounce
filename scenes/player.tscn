@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cd3a0pfwx7285"]
+
+[ext_resource type="Script" uid="uid://djd206q08bh8k" path="res://scripts/player.gd" id="1_fjrip"]
+[ext_resource type="Texture2D" uid="uid://cvhg8beihlatg" path="res://assets/MCC/just/SLIME MAIN CH NEW1.png" id="1_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://c8pwwsjoe8o8g" path="res://assets/MCC/just/SLIME MAIN CH NEW2.png" id="2_fjrip"]
+[ext_resource type="Texture2D" uid="uid://d3g5kpsap7o4l" path="res://assets/MCC/just/SLIME MAIN CH NEW3.png" id="3_smehm"]
+[ext_resource type="Texture2D" uid="uid://p0sjhppfp3h5" path="res://assets/MCC/just/SLIME MAIN CH NEW4.png" id="4_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://bbnalfqyvvwi" path="res://assets/MCC/just/SLIME MAIN CH NEW5.png" id="5_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://8uk4jie17hvs" path="res://assets/MCC/just/SLIME MAIN CH NEW6.png" id="6_d2wvv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cw3hl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tuyoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fjrip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y4r1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d2wvv")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cw3hl"]
+radius = 5.0990195
+
+[node name="Player" type="CharacterBody2D" unique_id=79292570]
+position = Vector2(0, -3)
+script = ExtResource("1_fjrip")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=479785406]
+texture_filter = 1
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_cw3hl")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.10964208
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=786949269]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_cw3hl")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1240174566]
+zoom = Vector2(4, 4)

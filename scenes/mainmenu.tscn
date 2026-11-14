@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://brvijh8kus05p"]
 
 [ext_resource type="Script" uid="uid://cpqxr7vsqfikd" path="res://scripts/mainmenu.gd" id="1_r3g3c"]
-[ext_resource type="Texture2D" uid="uid://dfbyw8qdd1bya" path="res://icon.svg" id="2_3vvtq"]
+[ext_resource type="Texture2D" uid="uid://dpgag0tpxi2ic" path="res://assets/UI/TitlescreenNNNn.png" id="2_r3g3c"]
 [ext_resource type="FontFile" uid="uid://h7jvncpts8p8" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="3_s5g8n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2nv2"]
@@ -31,14 +31,9 @@ script = ExtResource("1_r3g3c")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2141066292]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1693262241]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_right = -1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_3vvtq")
+offset_right = 1148.0
+offset_bottom = 644.0
+texture = ExtResource("2_r3g3c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1073292445]
 anchors_preset = 7
