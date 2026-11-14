@@ -14,9 +14,8 @@ A 2D platformer rouge-like game in which we have to get out of the hole.
 - Animated Outro with The end.
 
 ## Screenshots
-
-
-
+![first](screenshots/2.png)
+![first](screenshots/1.png)
 
 ## Tech Stack
 - Godot 4.5
