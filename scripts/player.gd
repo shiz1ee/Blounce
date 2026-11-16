@@ -37,6 +37,8 @@ func die():
 	layer.layer = 10
 	get_tree().current_scene.add_child(layer)
 	layer.add_child(preload("res://scenes/deathscreen.tscn").instantiate()) #change it to the new dead scene.
+	get_tree().paused = true
+
 
 	
 func bounce(force):
