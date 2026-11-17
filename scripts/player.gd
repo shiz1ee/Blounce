@@ -33,11 +33,15 @@ func die():
 	velocity = Vector2.ZERO
 	$AnimatedSprite2D.play("death")
 	await $AnimatedSprite2D.animation_finished
-	var layer = CanvasLayer.new()
-	layer.layer = 10
-	get_tree().current_scene.add_child(layer)
-	layer.add_child(preload("res://scenes/deathscreen.tscn").instantiate()) #change it to the new dead scene.
-	get_tree().paused = true
+	var game_over := GameState.lose_life()
+	if game_over:
+		var layer = CanvasLayer.new()
+		layer.layer = 10
+		get_tree().current_scene.add_child(layer)
+		layer.add_child(preload("res://scenes/deathscreen.tscn").instantiate())
+		get_tree().paused = true
+	else:
+		get_tree().reload_current_scene()
 
 
 	
