@@ -11,6 +11,6 @@ func _on_body_entered(body):
 	print("touched by: ", body.name)
 	if body.is_in_group("player") and body.velocity.y > 0:
 		body.bounce(bounce_force)
-		sprite.frame = 1
+		sprite.frame = 0
 		await get_tree().create_timer(0.3).timeout
 		sprite.frame = 0
